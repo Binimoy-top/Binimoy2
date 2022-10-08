@@ -33,4 +33,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 3. git push -u origin old_branch
 4. git switch master
 5. git branch -a
+<br>
+
  ```deploy ---------  npm i angular-cli-ghpages    git remote add origin https://github.com/<username>/<repositoryname>.git     ,   ng add angular-cli-ghpages          , ng deploy --base-href=/<repositoryname>/```
