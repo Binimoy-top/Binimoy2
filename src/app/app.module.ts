@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './Layouts/main-layout/main-layout.component';
 import { AuthLayoutComponent } from './Layouts/auth-layout/auth-layout.component';
+import { DashboardComponent } from './users/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AuthLayoutComponent implements OnInit {
   isShowDivIf = false;  
   login=true;
-  CustBtn="Login";
+  CustBtn="Sign UP";
 
   constructor() { }
 
@@ -18,10 +18,10 @@ export class AuthLayoutComponent implements OnInit {
     this.isShowDivIf = !this.isShowDivIf;  
     this.login=!this.login;
     if(this.login){
-      this.CustBtn="Login";
+      this.CustBtn="Sign Up";
     }
     else{
-      this.CustBtn="Signup";
+      this.CustBtn="Login";
     }
   }  
 
