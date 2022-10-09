@@ -2,10 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthenticationRoutingModule } from './authentication-routing.module';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SigninComponent,
+    SignupComponent,
+    AuthLayoutComponent
+  ],
   imports: [
     CommonModule,
     AuthenticationRoutingModule

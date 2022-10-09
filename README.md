@@ -28,11 +28,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 # Notes  
-1. ng generate m authentication --routing --flat
+1. ng generate m authentication --routing --flat   ,   ng g c main-layout --skip-tests
 2. git checkout -b new_branch old_branch {coppying into a new branch} or git checkout -b     new_branch
 3. git push -u origin old_branch
 4. git switch master
 5. git branch -a
 <br>
 
- ```deploy ---------  npm i angular-cli-ghpages    git remote add origin https://github.com/<username>/<repositoryname>.git     ,   ng add angular-cli-ghpages          , ng deploy --base-href=/<repositoryname>/```
+ ```deploy ---------  npm i angular-cli-ghpages    git remote add origin https://github.com/<username>/<repositoryname>.git     ,   ng add angular-cli-ghpages          , ng deploy --base-href=/<repositoryname>/  ex: ng deploy --base-href=/Binimoy2/```
