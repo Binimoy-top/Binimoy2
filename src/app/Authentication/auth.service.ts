@@ -6,8 +6,8 @@ import { BehaviorSubject, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  // url='https://zahidprantakg.bsite.net/api/Users/'
-  url='https://localhost:44339/api/users'
+  url='https://zahidprantakg.bsite.net/api/Users/'
+  // url='https://localhost:44339/api/users'
 
  
 
