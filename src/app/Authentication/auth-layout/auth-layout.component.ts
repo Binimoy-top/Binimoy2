@@ -6,23 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth-layout.component.css']
 })
 export class AuthLayoutComponent implements OnInit {
-  isShowDivIf = false;  
+
   login=true;
-  CustBtn="Sign UP";
+  sign_up_verification_processing=true;
+  CustBtn="Go To Sign UP";
 
   constructor() { }
 
   ngOnInit(): void {
   }
   togglesignin_up() {  
-    this.isShowDivIf = !this.isShowDivIf;  
     this.login=!this.login;
     if(this.login){
-      this.CustBtn="Sign Up";
+      this.CustBtn="Go To Sign Up";
     }
     else{
-      this.CustBtn="Login";
+      this.CustBtn="Go To Login";
     }
   }  
+  togglesign_up_ver(){
+    this.sign_up_verification_processing=!this.sign_up_verification_processing;
+
+  }
 
 }

@@ -29,7 +29,7 @@
 
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label"> Confirm Password</label>
-    <input type="password1" name="tempPass" formControlName="tempPass" class="form-control" id="tempPass">
+    <input type="password" name="tempPass" formControlName="tempPass" class="form-control" id="tempPass">
     <span
       *ngIf="(signUpform.get('tempPass').touched || signUpform.get('tempPass').dirty) && signUpform.get('tempPass').value !== signUpform.get('SenddatatoBackend.password').value"
       style="color:red" #validation> Password Doesn't Match!</span>
@@ -41,9 +41,12 @@
   <div class="text-center"> <button type="submit" class="btn btn-primary justify-content-center"
       [disabled]="!signUpform.valid ">Signup</button>
     <!--[disabled]="!signUpform.valid" -->
+   
   </div>
 
+
 </form>
+
 
 <!-- <form [formGroup]="signUpformTest"  (ngSubmit)="onsubmit()" >
   

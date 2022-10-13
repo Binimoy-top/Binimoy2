@@ -8,13 +8,16 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 
 import {HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing.module';
+import { SignupVerificationComponent } from './signup-verification/signup-verification.component';
+
 
 
 @NgModule({
   declarations: [
     SigninComponent,
     SignupComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    SignupVerificationComponent
   ],
   imports: [
     CommonModule,

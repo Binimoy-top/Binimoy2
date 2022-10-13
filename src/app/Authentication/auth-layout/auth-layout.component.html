@@ -1,4 +1,4 @@
-<script src="../node_modules/jquery/dist/jquery.js"></script>
+<!-- <script src="../node_modules/jquery/dist/jquery.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <style>
     .container-customcol {
@@ -24,20 +24,61 @@
             <button (click)=togglesignin_up() class="btn btn-success">{{CustBtn}}</button>  
         </div>
         <div class="col-md-6">
-            <app-signin *ngIf="login">x</app-signin>
+            <app-signin *ngIf="login"></app-signin>
             <app-signup *ngIf="!login"></app-signup>
-
-            <div class="mx-auto text-center">
-                
-              
+            <div class="mx-auto text-center">      
             </div>
-
-           
-
-
-
         </div>
+     
 
        
+    </div>  
+</div> -->
+
+
+
+
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<style>
+    .container-customcol {
+        background-color: rgb(185, 190, 144);
+        padding-top: 2em;
+        padding-bottom: 2em;
+        border-radius: 20%;
+    }
+
+    .btn-group {
+        padding-bottom: 2%;
+    }
+</style>
+<div class="d-flex justify-content-center " style="padding-top: 6em;">
+    <div class="row container-customcol">
+        <div class="col-md-6 text-center">
+
+            <div class="mx-auto" style="width: 200px;">
+                <h1 class="display-3">Binimoy</h1>
+            </div>
+            <div class="row" style="padding-bottom: 1em ;">
+                <div class="col">
+                    <button routerLink="signin" (click)="togglesignin_up()" class="btn btn-success">Sign in</button> 
+                </div>
+                <div class="col">
+                    <a routerLink="signup" (click)="togglesign_up_ver()" class="btn btn-light">Sign Up </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6" >
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+            <div>
+                
+            </div>
+            
+        </div>
+
+
+
     </div>
-</div>
