@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, tap } from 'rxjs';
 
 @Injectable({
@@ -22,6 +22,8 @@ export class AuthService {
       })
     )
   }
+
+
   
 
 }

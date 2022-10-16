@@ -1,2 +1,28 @@
-<p align="center">Email verification will be added soon!</p>
+<style>
+  .divpadtop {
+    padding-top: 1.5em;
+ 
+
+  }
+</style>
+<div class="d-flex justify-content-center ">Hello {{username_frm_local_strg}}, a code will be send to {{email_frm_local_strg}}.
+
+</div>
+<div class="d-flex justify-content-center divpadtop">
+  <button (click)="sendCode()" class="btn btn-primary" [disabled]="!codeSendBtn_status"> Confirm {{display}}</button>
+
+</div>
+
+<div class="divpadtop d-flex justify-content-center ">
+  
+  <form  #getOtpFrmInput="ngForm" (ngSubmit)="CodeValueSubmited(getOtpFrmInput.value)" autocomplete="off">
+      <input type="text" class="form-control" name="getotp" id="getotp" [(ngModel)]="model.getotp" placeholder="Code" >
+    <div class="divpadtop d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary mb-3" [disabled]="!codesent">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+
 
