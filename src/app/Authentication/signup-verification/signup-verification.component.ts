@@ -17,6 +17,7 @@ export class SignupVerificationComponent implements OnInit {
   username_frm_local_strg:string;
   model:any={};
   private randomOtpGen:any;
+  Userdata:any;
   
 
 
@@ -38,8 +39,7 @@ export class SignupVerificationComponent implements OnInit {
   sendCode() {
     this.codesent=true;
     this.timer(2);
-    this.randomOtpGen=this.generateRandomNumber();;
-    // console.log(this.randomOtpGen);
+    this.randomOtpGen=this.generateRandomNumber();
 
      // sending a mail
     var templateParams = {
@@ -64,14 +64,13 @@ export class SignupVerificationComponent implements OnInit {
       console.log(this.UserData);
   
       this.AuthSer.userSignUp(this.UserData).subscribe(x => {
-        console.log(x);
         alert('Account Created successfully!');
         this.router.navigate(['/users']);
       }, (error) => {
         console.log(error);
         alert('Wrong Credential');
       })
-
+      this.UserData=null;
     }
     else{
       alert('Please Re-check your code has been sent to your email!')
@@ -116,6 +115,8 @@ export class SignupVerificationComponent implements OnInit {
       }
     }, 1000);
   }
+
+
 
 
 

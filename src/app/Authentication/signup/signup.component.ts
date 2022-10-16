@@ -1,10 +1,11 @@
 
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { X_OK } from 'constants';
+import { tap } from 'rxjs';
 import { AuthService } from '../auth.service';
-
-
 
 @Component({
   selector: 'app-signup',
@@ -13,9 +14,11 @@ import { AuthService } from '../auth.service';
 })
 export class SignupComponent implements OnInit {
   signUpform: FormGroup;
-  constructor(private Authser: AuthService, private router: Router,) {
+  constructor(private Authser: AuthService, private router: Router,private http:HttpClient) {
 
   }
+
+  users:any;
 
   ngOnInit(): void {
     this.signUpform = new FormGroup({
@@ -23,11 +26,37 @@ export class SignupComponent implements OnInit {
         'email': new FormControl(null, [Validators.required, Validators.email]),
         'password': new FormControl(null, Validators.required),
         'username': new FormControl(null, Validators.required),
-      }),
-
+      
+      }/*,{validators: this.custVal('email')}*/), 
+      
       'tempPass': new FormControl(null, [Validators.required]),
     });
-  }
+  this.getUsers();
+}
+
+getUsers(){
+  this.http.get('https://localhost:44339/api/users').subscribe((res:any)=>{
+    (this.users=res)
+
+})
+}
+
+        /* Example of custom validators*/
+
+  /* private custVal(controlNameA:string): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+
+      const Formgrp=control as FormGroup;
+      const valueofControlA=Formgrp.get(controlNameA)?.value
+      if (true) {
+        console.log(valueofControlA)
+        return null
+      }
+      else {
+        return { Emailavailable: true }
+      }
+    }
+  } */
 
 
 
@@ -44,10 +73,10 @@ export class SignupComponent implements OnInit {
         //   alert('Wrong Credential');
         // })
         // console.log(this.signUpform.get('SenddatatoBackend').value);
-          sessionStorage.setItem('SignupData',JSON.stringify(this.signUpform.get('SenddatatoBackend').value));
-          console.log(JSON.parse(sessionStorage.getItem('SignupData')));
-          this.router.navigateByUrl('/Authentication/auth/signup-verification');
-          
+        sessionStorage.setItem('SignupData', JSON.stringify(this.signUpform.get('SenddatatoBackend').value));
+        console.log(JSON.parse(sessionStorage.getItem('SignupData')));
+        this.router.navigateByUrl('/Authentication/auth/signup-verification');
+
       }
       else {
         alert("please re-check!")
@@ -58,22 +87,5 @@ export class SignupComponent implements OnInit {
       alert("please re-check!")
     }
     // console.log(this.signUpform);
-
   }
-
-
-  signup(data: any) {
-
-    this.Authser.userSignUp(data).subscribe(x => {
-      console.log(x);
-      alert('Account Created successfully!');
-      this.router.navigate(['/users']);
-    }, (error) => {
-      console.log(error);
-      alert('Wrong Credential');
-    })
-
-  }
-
-
 }
