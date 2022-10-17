@@ -35,4 +35,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 5. git branch -a
 <br>
 
- ```deploy ---------  npm i angular-cli-ghpages    git remote add origin https://github.com/<username>/<repositoryname>.git     ,   ng add angular-cli-ghpages          , ng deploy --base-href=/<repositoryname>/  ex: ng deploy --base-href=/Binimoy2/```
+ ```deploy ---------  npm i angular-cli-ghpages    git remote add origin https://github.com/<username>/<repositoryname>.git     ,   ng add angular-cli-ghpages          , ng deploy --base-href=/<repositoryname>/  ex: ng deploy --base-href=/Binimoy2/  ```
+
+ ```git add -u   ---- adding all modified code```

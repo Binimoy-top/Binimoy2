@@ -14,11 +14,11 @@ import { AuthService } from '../auth.service';
 })
 export class SignupComponent implements OnInit {
   signUpform: FormGroup;
-  constructor(private Authser: AuthService, private router: Router,private http:HttpClient) {
+  constructor(private Authser: AuthService, private router: Router, private http: HttpClient) {
 
   }
 
-  users:any;
+  users: any;
 
   ngOnInit(): void {
     this.signUpform = new FormGroup({
@@ -26,37 +26,51 @@ export class SignupComponent implements OnInit {
         'email': new FormControl(null, [Validators.required, Validators.email]),
         'password': new FormControl(null, Validators.required),
         'username': new FormControl(null, Validators.required),
-      
-      }/*,{validators: this.custVal('email')}*/), 
-      
+
+      }, { validators: this.custVal('email','username') }),
+
       'tempPass': new FormControl(null, [Validators.required]),
     });
-  this.getUsers();
-}
+    this.getUsers();
+ 
+  }
 
-getUsers(){
-  this.http.get('https://localhost:44339/api/users').subscribe((res:any)=>{
-    (this.users=res)
+  getUsers() {
+    this.http.get('https://zahidprantakg.bsite.net/api/Users').subscribe((res: any) => {
+      (this.users = res)
+    })
+  }
 
-})
-}
 
-        /* Example of custom validators*/
 
-  /* private custVal(controlNameA:string): ValidatorFn {
+  /* Example of custom validators*/
+
+  private custVal(controlNameA: string,controlNameB: string): ValidatorFn {
+    const EmailList: string | any[]=[]
+    const usernameList: string | any[]=[]
+
+    this.http.get('https://zahidprantakg.bsite.net/api/Users').subscribe((res: any) => {
+      for (let n of res) {
+        EmailList.push(n.email)
+        usernameList.push(n.username)
+      }
+     
+    })
+    
     return (control: AbstractControl): ValidationErrors | null => {
 
-      const Formgrp=control as FormGroup;
-      const valueofControlA=Formgrp.get(controlNameA)?.value
-      if (true) {
-        console.log(valueofControlA)
+      const Formgrp = control as FormGroup;
+      const valueofControlA = Formgrp.get(controlNameA)?.value
+      const valueofControlB = Formgrp.get(controlNameB)?.value
+      if (!EmailList.includes(valueofControlA) && !usernameList.includes(valueofControlB)) {
         return null
       }
       else {
-        return { Emailavailable: true }
+        return { emailSimilar: true }
       }
-    }
-  } */
+   //In future use switch and remove client side validation
+  }
+}
 
 
 
