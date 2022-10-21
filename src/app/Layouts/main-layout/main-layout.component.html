@@ -1,7 +1,12 @@
 <style>
-    body{
-        background-color: aquamarine;
+    .container-cstm {
+        background-color: rgb(141, 169, 169);
     }
 </style>
 
-<p >main-layout works!</p>
+<div class="container-cstm">
+    <p>main-layout works!</p>
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <router-outlet></router-outlet>
+</div>

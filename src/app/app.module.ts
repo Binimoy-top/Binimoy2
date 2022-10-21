@@ -5,15 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './Layouts/main-layout/main-layout.component';
 import { AuthLayoutComponent } from './Layouts/auth-layout/auth-layout.component';
-import { DashboardComponent } from './users/dashboard/dashboard.component';
+
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './Layouts/header/header.component';
+import { SidebarComponent } from './Layouts/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainLayoutComponent,
     AuthLayoutComponent,
-    DashboardComponent
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
