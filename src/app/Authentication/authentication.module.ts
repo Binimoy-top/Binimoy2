@@ -6,9 +6,8 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 
-import {HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from '../app-routing.module';
 import { SignupVerificationComponent } from './signup-verification/signup-verification.component';
+import { Page404Component } from './page404/page404.component';
 
 
 
@@ -17,14 +16,13 @@ import { SignupVerificationComponent } from './signup-verification/signup-verifi
     SigninComponent,
     SignupComponent,
     AuthLayoutComponent,
-    SignupVerificationComponent
+    SignupVerificationComponent,
+    Page404Component
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-
- 
     AuthenticationRoutingModule
   ]
 })

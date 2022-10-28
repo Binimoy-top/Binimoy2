@@ -22,6 +22,16 @@ export class AuthService {
       })
     )
   }
+  UserLogin(data:any){
+    return this.http.post("https://zahidprantakg.bsite.net/api/UserLoginValidate",data).pipe(
+      tap((response:any)=>{ 
+        console.log(response.data);
+        localStorage.setItem('login_Info',response.token);
+      })
+    )
+  }
+
+
 
 
 

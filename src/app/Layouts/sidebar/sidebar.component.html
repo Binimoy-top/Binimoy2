@@ -1,12 +1,40 @@
+     <!-- Main Sidebar Container -->
+     <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <div class="brand-link">
+          <img src="assets/dist/img/binimoyLogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+          <span class="brand-text font-weight-light">Binimoy</span>
+        </div>
+    
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img src="assets/dist/img/binimoyLogo.png" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+              <a class="d-block">{{this.userInfo.username}}</a>
+              <p class="text-warning">Coin : 0.00 </p>
+              <p class="text-success">{{this.userInfo.email}}</p>
+            </div>
+           
 
-<style>
+          </div>
+         
 
-.container-cstm{
-    background-color: aqua;
-}
-</style>
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-<div class="container-cstm">
-    <p>sidebar works!</p>
-</div>
-
+            <li class="nav-item">
+              <a href="#" (click)="logout()" class="nav-link">
+                <i class="nav-icon far fa-circle text-info"></i>
+                <p>Logout</p>
+              </a>
+            </li>
+          </ul>
+      
+          
+           
+        </div>
+        <!-- /.sidebar -->
+      </aside>

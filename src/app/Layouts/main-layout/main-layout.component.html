@@ -1,12 +1,23 @@
-<style>
-    .container-cstm {
-        background-color: rgb(141, 169, 169);
-    }
-</style>
 
-<div class="container-cstm">
-    <p>main-layout works!</p>
+<body class="hold-transition sidebar-mini layout-fixed">
+
+
+  <div class="wrapper">
+
+
     <app-header></app-header>
+
     <app-sidebar></app-sidebar>
-    <router-outlet></router-outlet>
-</div>
+
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+
+
+
+
+  </div>
+
+
+
+</body>

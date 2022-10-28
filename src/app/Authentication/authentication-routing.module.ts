@@ -12,11 +12,31 @@ const routes: Routes = [
     pathMatch: 'full',
   },
 
+  // auth_in layout 
+  // {
+  //   path: 'signup-verification',
+  //   component: SignupVerificationComponent
+
+  // },
+  // {
+  //   path: 'signin',
+  //   component: SigninComponent,
+  // },
+  // {
+  //   path: 'signup',
+  //   component: SignupComponent,
+  // },
+
 
   {
     path: 'auth',
     component: AuthLayoutComponent,
     children: [
+      {
+        path: '',
+        redirectTo: 'signin',
+        pathMatch: 'full',
+      },
       {
         path: 'signup-verification',
         component: SignupVerificationComponent

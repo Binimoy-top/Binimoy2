@@ -20,7 +20,7 @@
     "@angular/router": "~13.2.0",
     "@emailjs/browser": "^3.7.0",
     "angular-cli-ghpages": "^1.0.3",
-    "bootstrap": "^5.2.2",
+    "bootstrap": "^4.6.2",
     "nodemailer": "^6.8.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

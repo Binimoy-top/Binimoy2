@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
     this.signUpform = new FormGroup({
       'SenddatatoBackend': new FormGroup({
         'email': new FormControl(null, [Validators.required, Validators.email]),
-        'password': new FormControl(null, [Validators.required,Validators.minLength(8),Validators.maxLength(10)]),
+        'password': new FormControl(null, [Validators.required,Validators.minLength(6),Validators.maxLength(20)]),
         'username': new FormControl(null, Validators.required),
 
       }, { validators: this.custVal('email','username') }),

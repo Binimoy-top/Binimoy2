@@ -64,8 +64,8 @@ export class SignupVerificationComponent implements OnInit {
       console.log(this.UserData);
   
       this.AuthSer.userSignUp(this.UserData).subscribe(x => {
-        alert('Account Created successfully!');
-        this.router.navigate(['/users']);
+        alert('Account Created successfully! Please Login!');
+        this.router.navigate(['/']);
       }, (error) => {
         console.log(error);
         alert('Wrong Credential');
@@ -73,7 +73,7 @@ export class SignupVerificationComponent implements OnInit {
       this.UserData=null;
     }
     else{
-      alert('Please Re-check your code has been sent to your email!')
+      alert('Please Re-check your code has been sent to your email Address!')
     }
     // console.log(this.model.randomOtpGen);
   }
