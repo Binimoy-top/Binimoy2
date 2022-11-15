@@ -14,27 +14,59 @@
               <img src="assets/dist/img/binimoyLogo.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-              <a class="d-block">{{this.userInfo.username}}</a>
-              <p class="text-warning">Coin : 0.00 </p>
-              <p class="text-success">{{this.userInfo.email}}</p>
+              <a routerLink="/users/dashboard/MainDashboard" class="d-block">{{this.userInfo.username}}</a>
+              <p class="text-warning">BP : 0.00 </p>
+    
             </div>
-           
-
           </div>
-         
-
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-            <li class="nav-item">
-              <a href="#" (click)="logout()" class="nav-link">
-                <i class="nav-icon far fa-circle text-info"></i>
-                <p>Logout</p>
-              </a>
-            </li>
-          </ul>
+          <div class="user-panel d-flex" style="border: none;">
+          
+              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
       
+                <li class="nav-item">
+                  <a routerLink="/users/dashboard/MainDashboard/userProfile" (click)="ProfileShow()" class="nav-link">
+                    <i class="nav-icon fas fa-user text-info"> </i>
+                    <p>User Profile</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" (click)="logout()" class="nav-link">
+                    
+                    <i class="nav-icon fas fa-sign-out-alt text-danger"></i>
+                    <p>Logout</p>
+                  </a>
+                </li>
+                
+              </ul>
+          </div>
+          
+
           
            
+           
+          <!-- <div class="fixed-bottom"> bootstrap -->
+             <div class="user-panel" style="position:absolute;color:blue;bottom:0;left:0px">
+             
+                <div class="user-panel d-flex">
+                  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      
+                   
+                    
+                  </ul>
+                </div>
+              </div>
+            
+             
+           
+          
+         
+              
+   
+
+          
+      
+          
         </div>
+
         <!-- /.sidebar -->
       </aside>

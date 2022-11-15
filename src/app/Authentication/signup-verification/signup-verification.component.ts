@@ -16,7 +16,6 @@ export class SignupVerificationComponent implements OnInit {
   email_frm_local_strg:string;
   username_frm_local_strg:string;
   model:any={};
-  private randomOtpGen:any;
   Userdata:any;
   
 
@@ -35,6 +34,7 @@ export class SignupVerificationComponent implements OnInit {
 
 
 // send email confirmation button
+private randomOtpGen:any;
   codesent=false;
   sendCode() {
     this.codesent=true;

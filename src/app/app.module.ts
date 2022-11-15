@@ -9,6 +9,7 @@ import { AuthLayoutComponent } from './Layouts/auth-layout/auth-layout.component
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './Layouts/header/header.component';
 import { SidebarComponent } from './Layouts/sidebar/sidebar.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SidebarComponent } from './Layouts/sidebar/sidebar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]

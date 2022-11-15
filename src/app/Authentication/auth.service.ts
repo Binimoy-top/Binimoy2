@@ -6,8 +6,8 @@ import { BehaviorSubject, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  url='https://zahidprantakg.bsite.net/api/Users/'
-  // url='https://localhost:44339/api/users'
+  url='https://binimoy.somee.com/api/'
+  // url='https://localhost:44339/api/'
 
  
 
@@ -18,17 +18,25 @@ export class AuthService {
   userSignUp(data:any){
     return this.http.post(this.url,data).pipe(
       tap((response:any)=>{ 
-        console.log(response.data);
+        // console.log(response.data);
       })
     )
   }
   UserLogin(data:any){
-    return this.http.post("https://zahidprantakg.bsite.net/api/UserLoginValidate",data).pipe(
+    return this.http.post(this.url+"UserLoginValidate",data).pipe(
       tap((response:any)=>{ 
-        console.log(response.data);
-        localStorage.setItem('login_Info',response.token);
+        // console.log(response.data);
+        
       })
     )
+  }
+
+  UserEdit(id:string,data:any){
+    return this.http.put(this.url+"users/"+id,data)
+  }
+
+  UsersList(){
+    return this.http.get(this.url+"users/")
   }
 
 

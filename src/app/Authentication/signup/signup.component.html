@@ -25,7 +25,7 @@
       <input type="password" formControlName="password" class="form-control" id="InputPassword2">
       <span *ngIf="!signUpform.get('SenddatatoBackend.password').valid" style="color:red"> Password must be 6-20 charecter!</span>
       <span *ngIf="signUpform.get('SenddatatoBackend.password').errors?.['minlength']" style="color:red"> Password should be 6 charecter!</span>
-      <span *ngIf="signUpform.get('SenddatatoBackend.password').errors?.['maxlength']" style="color:red"> Password should not be more than 10 charecter!</span>
+      <span *ngIf="signUpform.get('SenddatatoBackend.password').errors?.['maxlength']" style="color:red"> Password should not be more than 20 charecter!</span>
 
 
     </div>

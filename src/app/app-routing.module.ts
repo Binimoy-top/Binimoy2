@@ -11,7 +11,7 @@ const routes: Routes = [
     component: MainLayoutComponent, //children will be in the router outlet of main component,
     canActivate: [AuthGGuard],
     children: [
-      { path: '', redirectTo: '/Authentication/auth', pathMatch: 'full' },
+      { path: '', redirectTo: '/Authentication/auth/signin', pathMatch: 'full' },
       {
         path: 'users',
         canActivate: [AuthGGuard],

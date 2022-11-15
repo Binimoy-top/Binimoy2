@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,18 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   userInfo:any;
+  Signindata =JSON.parse(sessionStorage.getItem('SigninData'))
+  userEdited =JSON.parse(sessionStorage.getItem('editedUsersInfo'))
 
-  constructor() { }
+
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
  
-    this.userInfo =JSON.parse(sessionStorage.getItem('SigninData'));
+    if(this.userEdited!=null){
+    this.userInfo =this.userEdited;
+    }
+    else{
+      this.userInfo =this.Signindata;
+
+    }
    
-
-
   }
   logout(){
-   sessionStorage.removeItem('SigninData')
+    localStorage.clear() 
+    sessionStorage.clear() 
+  }
+  ProfileShow(){
+  
+
   }
 
 }

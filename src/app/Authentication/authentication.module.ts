@@ -8,6 +8,7 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 
 import { SignupVerificationComponent } from './signup-verification/signup-verification.component';
 import { Page404Component } from './page404/page404.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 
 
@@ -17,7 +18,8 @@ import { Page404Component } from './page404/page404.component';
     SignupComponent,
     AuthLayoutComponent,
     SignupVerificationComponent,
-    Page404Component
+    Page404Component,
+    ForgotpasswordComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
@@ -11,6 +12,9 @@ const routes: Routes = [
   {
     path: 'MainDashboard',
     component: DashboardComponent,
+    children:[
+      { path: 'userProfile', component: UserProfileComponent },
+    ]
   },
 ];
 
