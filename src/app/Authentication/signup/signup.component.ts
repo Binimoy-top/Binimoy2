@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
   }
 
   getUsers() {
-    this.http.get('https://zahidprantakg.bsite.net/api/Users').subscribe((res: any) => {
+    this.http.get(this.Authser.url+'api/Users').subscribe((res: any) => {
       (this.users = res)
     })
   }
@@ -50,7 +50,7 @@ export class SignupComponent implements OnInit {
     const EmailList: string | any[]=[]
     const usernameList: string | any[]=[]
 
-    this.http.get('https://zahidprantakg.bsite.net/api/Users').subscribe((res: any) => {
+    this.http.get(this.Authser.url+'api/Users').subscribe((res: any) => {
       for (let n of res) {
         EmailList.push(n.email)
         usernameList.push(n.username)

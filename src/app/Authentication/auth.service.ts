@@ -6,8 +6,11 @@ import { BehaviorSubject, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  url='https://binimoy.somee.com/api/'
+  // url='https://binimoy.somee.com/api/'
+    url='https://binimoy.bsite.net/'
   // url='https://localhost:44339/api/'
+
+
 
  
 

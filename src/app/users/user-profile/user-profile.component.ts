@@ -5,7 +5,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/Authentication/auth.service';
-import { user } from 'src/app/models/users.models';
+// import { user } from 'src/app/models/users.models';
+import { user, UserserviceService } from 'src/app/store/Makenew/userservice.service';
 import { SessionServiceService } from 'src/app/store/sessionStore/storage-service.service';
 import { usersStore } from 'src/app/store/users.store';
 
@@ -18,13 +19,18 @@ import { usersStore } from 'src/app/store/users.store';
 export class UserProfileComponent implements OnInit {
   userEditedForm: FormGroup;
 
-  constructor(private auther: AuthService, private router: Router, private userStr: usersStore, private storeSer: SessionServiceService, private http: HttpClient) {
+  constructor(private auther: AuthService, private router: Router, 
+    private userStr: usersStore, private storeSer: SessionServiceService, 
+    private http: HttpClient, 
+    private newStoreSer:UserserviceService) 
+    {
 
   }
   userinfo: any;
   usersstore$ = this.userStr.users$;
 
   test: any;
+  public newusers$:Observable<user[]>
   ngOnInit(): void {
     this.userinfo = JSON.parse(sessionStorage.getItem('SigninData'));
     var coin: number = this.userinfo.coin
@@ -35,6 +41,10 @@ export class UserProfileComponent implements OnInit {
       'phone': new FormControl(null),
       'address': new FormControl(null),
     })
+
+    this.newusers$=this.newStoreSer.getusersfromstore()
+    console.log(this.newusers$)
+    this.newusers$.subscribe((usr)=>console.log(usr))
 
 
 
